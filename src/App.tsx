@@ -27,17 +27,17 @@ function App() {
         setFilter(filter)
     }
     let filteredTasks = tasks
-    if(filter === 'active') {
+    if (filter === 'active') {
         filteredTasks = tasks.filter(task => !task.isDone)
     }
-    if(filter === 'completed') {
+    if (filter === 'completed') {
         filteredTasks = tasks.filter(task => task.isDone)
     }
 
     return (
         <div className="App">
             <Todolist title='What to learn'
-                      tasks={tasks}
+                      tasks={filteredTasks}
                       deleteTask={deleteTask}
                       changeFilter={changeFilter}
             />
